@@ -1,0 +1,20 @@
+{
+  "name": "css3clock.css",
+  "version": "0.0.1",
+  "main": "./css/main.css",
+  "description": "CSS3-only working clock",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iliadraznin/CSS3clock.git"
+  },
+  "keywords": [
+    "css",
+    "stylesheet",
+    "css3clock"
+  ],
+  "author": "iliadraznin",
+  "bugs": {
+    "url": "https://github.com/iliadraznin/CSS3clock/issues"
+  },
+  "homepage": "https://github.com/iliadraznin/CSS3clock/"
+}
