@@ -1,3 +1,11 @@
+:root {
+  --seconds-rotate-original: 0deg; /* second x 6 */
+  --seconds-rotate-to: 360deg; /* 360 + second original */
+  --minutes-rotate-original: 0deg; /* minute x 6 + second x 0.1 */
+  --minutes-rotate-to: 360deg; /* 360 + minute original*/
+  --hours-rotate-original: 0deg; /* hour x 30 + minute x 0.5 + second x (0.5 / 60) */
+  --hours-rotate-to: 360deg; /* 360 + hour original */
+}
 body { margin:1em; background:#232425 }
 ul { list-style:none; margin:0; padding:0 }
 #watch { font-size:1em; position:relative }
@@ -154,7 +162,7 @@ ul { list-style:none; margin:0; padding:0 }
   background:-moz-radial-gradient(center, ellipse cover, rgba(200,200,200,0), rgba(190,190,190,1) 90%, rgba(130,130,130,1) 100%);
   background:radial-gradient(ellipse at center, rgba(200,200,200,0), rgba(190,190,190,1) 90%, rgba(130,130,130,1) 100%);
 }
-@keyframes hours { to {transform:rotate(335deg)} }
+@keyframes hours { to {transform:rotate(var(--hours-rotate-to))} }
 #watch .hours-hand {
   width:.8em;
   height:7em;
@@ -165,7 +173,7 @@ ul { list-style:none; margin:0; padding:0 }
   margin:0 0 -.8em -.4em;
   box-shadow:#232425 0 0 2px;
   transform-origin:0.4em 6.2em;
-  transform:rotate(-25deg);
+  transform:rotate(var(--hours-rotate-original));
   animation:hours 43200s linear 0s infinite;
 }
 #watch .hours-hand:before {
@@ -188,7 +196,7 @@ ul { list-style:none; margin:0; padding:0 }
   position:absolute;
   top:-3.1em; left:-.5em;
 }
-@keyframes minutes { to {transform:rotate(422deg)} }
+@keyframes minutes { to {transform:rotate(var(--minutes-rotate-to))} }
 #watch .minutes-hand {
   width:.8em;
   height:12.5em;
@@ -199,10 +207,10 @@ ul { list-style:none; margin:0; padding:0 }
   margin:0 0 -1.5em -.4em;
   box-shadow:#343536 0 0 2px;
   transform-origin:0.4em 11em;
-  transform:rotate(62deg);
+  transform:rotate(var(--minutes-rotate-original));
   animation:minutes 3600s linear 0s infinite;
 }
-@keyframes seconds { to {transform:rotate(480deg)} }
+@keyframes seconds { to {transform:rotate(var(--seconds-rotate-to))} }
 #watch .seconds-hand {
   width:.2em;
   height:14em;
@@ -213,7 +221,7 @@ ul { list-style:none; margin:0; padding:0 }
   margin:0 0 -2em -.1em;
   box-shadow:rgba(0,0,0,.8) 0 0 .2em;
   transform-origin:0.1em 12em;
-  transform:rotate(120deg);
+  transform:rotate(var(--seconds-rotate-original));
   animation:seconds 60s steps(60, end) 0s infinite;
 }
 #watch .seconds-hand:after {
