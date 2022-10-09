@@ -1,6 +1,6 @@
 {
   "name": "css3clock.css",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./css/main.css",
   "description": "CSS3-only working clock",
   "repository": {
